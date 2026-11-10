@@ -367,57 +367,57 @@ export const DAILY_GROWTH_SCHEDULE: GrowthScheduleItem[] = [
 export const DAILY_DOS: GrowthGuidelineItem[] = [
   {
     id: 'do-1',
-    title: 'Prioritize 8–10 Hours of Uninterrupted Sleep',
-    summary: 'Sleep is the biological engine of human growth.',
-    details: 'During slow-wave deep sleep, the anterior pituitary gland releases major pulses of Human Growth Hormone (HGH). Adolescents require 8 to 10 hours of sleep per night to support cellular repair, tissue remodeling, and healthy long-bone development.',
-    category: 'Sleep & Recovery',
+    title: 'Eat balanced and nutritious meals',
+    summary: 'Adequate protein, calcium and vitamin D through wholesome food.',
+    details: 'Bones consist of an organic collagen matrix reinforced with calcium-phosphate crystals (hydroxyapatite). Daily balanced Indian meals rich in milk, curd, paneer, chana, dal, ragi, and leafy greens supply essential macronutrients and micronutrients for healthy musculoskeletal development.',
+    category: 'Nutrition',
     evidenceLevel: 'Clinical Recommendation'
   },
   {
     id: 'do-2',
-    title: 'Consume Adequate Bioavailable Protein & Calcium',
-    summary: 'Supply the physical building blocks of the bone matrix.',
-    details: 'Bones consist of an organic collagen matrix reinforced with hydroxyapatite (calcium-phosphate crystals). Ensure daily intake of whole milk, curd/yogurt, paneer, chana, lentils, eggs, and leafy green vegetables like spinach and amaranth.',
-    category: 'Nutrition',
+    title: 'Maintain a consistent sleep schedule',
+    summary: '8 to 10 hours of restorative sleep supports natural growth hormone release.',
+    details: 'Over 60–75% of daily Human Growth Hormone (HGH) is released during slow-wave deep sleep (Stage 3 and 4 SWS). Going to bed and waking at consistent hours maintains optimal circadian endocrine rhythm for adolescents and adults alike.',
+    category: 'Sleep & Recovery',
     evidenceLevel: 'Physiological Fact'
   },
   {
     id: 'do-3',
-    title: 'Get 15–20 Minutes of Daily Morning Sunlight',
-    summary: 'Activate natural Vitamin D3 for calcium assimilation.',
-    details: 'Without sufficient Vitamin D3, the body absorbs less than 15% of dietary calcium. Moderate morning sun exposure on bare skin triggers safe, natural cutaneal synthesis without harmful UV burning.',
-    category: 'Nutrition',
-    evidenceLevel: 'Clinical Recommendation'
-  },
-  {
-    id: 'do-4',
-    title: 'Practice Daily Multi-Plane Posture Stretches',
-    summary: 'Decompress discs and counteract forward-slouching habits.',
-    details: 'Regular execution of Cat-Cow, Cobra, Mountain Pose, and Wall Angels counteracts excessive thoracic kyphosis and anterior pelvic tilt, immediately helping you stand at your true maximum natural height.',
-    category: 'Posture & Ergonomics',
-    evidenceLevel: 'Physiological Fact'
-  },
-  {
-    id: 'do-5',
-    title: 'Engage in Regular Weight-Bearing Play & Sports',
-    summary: 'Mechanically stimulate epiphyseal bone density.',
-    details: 'Activities involving running, jumping, swimming, calisthenics, and hanging apply benign mechanical strain that encourages osteoblastic bone synthesis according to Wolff’s Law.',
+    title: 'Participate in regular physical activity',
+    summary: 'Weight-bearing sports, calisthenics, and active play strengthen bones.',
+    details: 'Regular dynamic movement, running, jumping, and recreational calisthenics apply beneficial mechanical loads that stimulate osteoblasts to build stronger bone density according to Wolff’s Law.',
     category: 'Physical Activity',
     evidenceLevel: 'Physiological Fact'
   },
   {
-    id: 'do-6',
-    title: 'Maintain Ergonomic Study and Screen Habits',
-    summary: 'Keep devices at eye level to protect the cervical spine.',
-    details: 'For every inch your head tilts forward, the effective load on your neck muscles increases by 10 pounds (4.5 kg). Set textbooks or laptop stands so you look straight ahead, keeping your ears aligned over your shoulders.',
+    id: 'do-4',
+    title: 'Spend time outdoors',
+    summary: 'Natural morning sunshine enables biological Vitamin D synthesis.',
+    details: 'Spending 15–20 minutes in morning sunlight triggers cutaneous synthesis of Vitamin D3, which is required for the body to absorb calcium from your diet. Without vitamin D, less than 15% of dietary calcium is absorbed.',
+    category: 'Activity & Sunshine',
+    evidenceLevel: 'Clinical Recommendation'
+  },
+  {
+    id: 'do-5',
+    title: 'Maintain good posture',
+    summary: 'Stand and sit with neutral spinal curvature to avoid disc compression.',
+    details: 'Forward-head posture and slouched shoulders compress vertebral discs and produce excessive kyphosis. Practicing Mountain Pose, Wall Angels, and ergonomic desk habits reclaims 1–2 cm of height lost to daily spinal slump.',
     category: 'Posture & Ergonomics',
+    evidenceLevel: 'Physiological Fact'
+  },
+  {
+    id: 'do-6',
+    title: 'Follow safe exercise techniques',
+    summary: 'Focus on proper form, progressive overload, and joint mobility.',
+    details: 'Prioritize controlled movement over heavy spinal loading. Warming up properly, keeping joints aligned, and avoiding hyperextension protects growth cartilage and connective tissue from injury.',
+    category: 'Physical Activity',
     evidenceLevel: 'Safety Protocol'
   },
   {
     id: 'do-7',
-    title: 'Consult Pediatricians or Endocrinologists for Growth Concerns',
-    summary: 'Rely on certified clinical evaluation for growth trajectories.',
-    details: 'If growth velocity deviates significantly from standard percentiles or if there is concern regarding pubertal timing, consult a qualified pediatrician or pediatric endocrinologist who can safely check growth plate status via wrist radiography.',
+    title: 'Consult a healthcare professional about growth concerns',
+    summary: 'Board-certified pediatricians and endocrinologists provide safe medical evaluation.',
+    details: 'If you or your guardian have clinical concerns regarding growth velocity, pubertal timing, or percentiles, consult a certified pediatrician or pediatric endocrinologist for evidence-based bone-age radiography and hormone assessment.',
     category: 'Medical Safety',
     evidenceLevel: 'Clinical Recommendation'
   }
@@ -426,57 +426,57 @@ export const DAILY_DOS: GrowthGuidelineItem[] = [
 export const DAILY_DONTS: GrowthGuidelineItem[] = [
   {
     id: 'dont-1',
-    title: 'NEVER Use Restrictive Calorie-Deficit Diets Under 18',
-    summary: 'Adolescent growth requires nutritional sufficiency, not severe caloric cuts.',
-    details: 'Restrictive cutting diets, meal skipping, or extreme calorie deficits starve growing bones and organs of critical macronutrients and micronutrients, which can permanently blunt pubertal growth trajectories.',
+    title: 'Avoid skipping meals',
+    summary: 'Growing bodies require steady, uncompromised nutritional fuel throughout the day.',
+    details: 'Skipping breakfast or major meals deprives bones, muscles, and the brain of vital glucose, amino acids, and micronutrients needed for cellular growth and hormonal homeostasis.',
     category: 'Nutrition',
     evidenceLevel: 'Safety Protocol'
   },
   {
     id: 'dont-2',
-    title: 'NEVER Buy Unverified "Height Growth" Pills or Tonics',
-    summary: 'Beware of online commercial scams and unsafe supplements.',
-    details: 'There are no over-the-counter supplements, herbs, drops, or powders clinically proven to increase adult bone length. Many contain unlisted and dangerous steroids, heavy metals, or excessive unregulated hormones.',
-    category: 'Medical Safety',
+    title: 'Avoid extreme dieting',
+    summary: 'Never use aggressive caloric deficits, starvation fasts, or restrictive cuts under 18.',
+    details: 'Severe calorie restriction during adolescence can blunt growth velocity, impair bone mineral accrual, and disrupt endocrine signaling. Adolescents need nutritional sufficiency, not aggressive deficits.',
+    category: 'Nutrition',
     evidenceLevel: 'Safety Protocol'
   },
   {
     id: 'dont-3',
-    title: 'DO NOT Believe Myths That Hanging Lengthens Fused Bones',
-    summary: 'Hanging decompresses spinal discs, but does not alter long bones.',
-    details: 'Hanging from a bar is wonderful for shoulder health, grip strength, and temporary intervertebral spinal decompression, but it does not expand or lengthen closed epiphyseal growth plates in the femur, tibia, or spine.',
-    category: 'Physical Activity',
-    evidenceLevel: 'Physiological Fact'
-  },
-  {
-    id: 'dont-4',
-    title: 'DO NOT Sleep With Excessive Screen Blue Light in Bed',
-    summary: 'Blue light suppresses natural melatonin and halts deep restorative sleep.',
-    details: 'Checking smartphones in the dark tricks the brain into assuming it is daytime, delaying the onset of slow-wave sleep where 60–75% of daily human growth hormone is secreted.',
-    category: 'Sleep & Recovery',
-    evidenceLevel: 'Clinical Recommendation'
-  },
-  {
-    id: 'dont-5',
-    title: 'DO NOT Carry Overweight School Backpacks on One Shoulder',
-    summary: 'Uneven heavy loads induce functional scoliosis and spinal curvature.',
-    details: 'Backpacks should weigh no more than 10–15% of body weight and should always be worn using both padded shoulder straps to distribute spinal stress symmetrically.',
-    category: 'Posture & Ergonomics',
-    evidenceLevel: 'Safety Protocol'
-  },
-  {
-    id: 'dont-6',
-    title: 'DO NOT Smoke, Vape, or Consume Alcohol',
-    summary: 'Nicotine and toxic metabolites restrict microvascular blood flow to growth cartilage.',
-    details: 'Nicotine impairs chondrocyte proliferation in epiphyseal growth plates and diminishes bone mineral density. Avoiding all nicotine and alcohol is paramount for adolescent development.',
+    title: 'Avoid unverified height-increasing supplements',
+    summary: 'Commercial "growth powders", pills, and tonics are fraudulent and potentially dangerous.',
+    details: 'There are no over-the-counter supplements or Ayurvedic powders clinically proven to increase bone length. Many unregulated formulas contain concealed steroids, heavy metals, or toxic contaminants.',
     category: 'Medical Safety',
     evidenceLevel: 'Safety Protocol'
   },
   {
+    id: 'dont-4',
+    title: 'Avoid excessive exercise',
+    summary: 'Allow adequate rest and recovery between training and sporting activities.',
+    details: 'Overtraining without adequate recovery elevates chronic cortisol, interferes with slow-wave sleep, and risks epiphyseal overuse injuries. Balance physical activity with structured rest days.',
+    category: 'Physical Activity',
+    evidenceLevel: 'Clinical Recommendation'
+  },
+  {
+    id: 'dont-5',
+    title: 'Avoid comparing your height with others',
+    summary: 'Growth happens at different rates; puberty timing varies naturally among individuals.',
+    details: 'Genetics account for 70–80% of final adult stature. Some adolescents hit peak height velocity earlier (age 11–13) while late bloomers experience their spurt between 14–17. Stature is an individual genetic journey.',
+    category: 'Medical Safety',
+    evidenceLevel: 'Physiological Fact'
+  },
+  {
+    id: 'dont-6',
+    title: 'Do not expect hanging or stretching to lengthen bones',
+    summary: 'Hanging decompresses spinal discs, but does not alter fused or growing long bones.',
+    details: 'Bar hanging is wonderful for shoulder mobility, grip strength, and temporary intervertebral decompression (reclaiming compressed disc space), but it cannot stimulate longitudinal bone elongation once growth plates fuse.',
+    category: 'Physical Activity',
+    evidenceLevel: 'Physiological Fact'
+  },
+  {
     id: 'dont-7',
-    title: 'DO NOT Fall For Unrealistic Guaranteed Height Promises',
-    summary: 'Genetics determine 70–80% of final adult stature.',
-    details: 'Anyone promising a guaranteed 3 to 5-inch height increase in a matter of weeks is making fraudulent claims. Genuine progress comes from maximizing your natural genetic blueprint through healthy daily habits and optimal posture.',
+    title: 'Do not follow routines that promise guaranteed height increases',
+    summary: 'Genetics set structural potential; no internet exercise program can guarantee added inches.',
+    details: 'Claims promising 2–4 inches of guaranteed height through special exercises or stretches are misleading. Legitimate routines focus on posture optimization, core strength, and natural spinal alignment.',
     category: 'Medical Safety',
     evidenceLevel: 'Clinical Recommendation'
   }

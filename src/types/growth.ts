@@ -41,7 +41,7 @@ export interface GrowthGuidelineItem {
   title: string;
   summary: string;
   details: string;
-  category: 'Nutrition' | 'Sleep & Recovery' | 'Physical Activity' | 'Posture & Ergonomics' | 'Medical Safety';
+  category: 'Nutrition' | 'Sleep & Recovery' | 'Physical Activity' | 'Posture & Ergonomics' | 'Medical Safety' | 'Activity & Sunshine';
   evidenceLevel: 'Clinical Recommendation' | 'Physiological Fact' | 'Safety Protocol';
 }
 
