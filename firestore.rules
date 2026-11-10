@@ -1,0 +1,91 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // 1. Default-deny catch-all
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Helper functions
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() > 0 && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    // User Profile Validation
+    function isValidUserProfile(data, userId) {
+      return data.id == userId
+        && data.email is string
+        && data.email.size() > 3
+        && data.email.size() <= 120
+        && data.fullName is string
+        && data.fullName.size() > 0
+        && data.fullName.size() <= 100
+        && (data.currentWeightKg is number && data.currentWeightKg > 20 && data.currentWeightKg < 350)
+        && (data.targetWeightKg is number && data.targetWeightKg > 20 && data.targetWeightKg < 350)
+        && (data.currentHeightCm is number && data.currentHeightCm > 50 && data.currentHeightCm < 280)
+        && data.primaryGoal is string
+        && data.dietaryPreference is string;
+    }
+
+    // Plans Validation
+    function isValidPersonalPlan(data, userId) {
+      return data.userId == userId
+        && data.id is string
+        && data.dietPlan is map
+        && data.workoutPlan is map;
+    }
+
+    // Progress Validation
+    function isValidProgressLog(data, userId) {
+      return data.userId == userId
+        && data.date is string
+        && data.weightKg is number
+        && data.weightKg > 20
+        && data.weightKg < 350;
+    }
+
+    // User profile documents (PII isolated, only owner can access)
+    match /users/{userId} {
+      allow get: if isOwner(userId) && isValidId(userId);
+      allow list: if false; // Blanket user listing forbidden for privacy
+      allow create: if isOwner(userId) && isValidId(userId) && isValidUserProfile(incoming(), userId);
+      allow update: if isOwner(userId) && isValidId(userId) && isValidUserProfile(incoming(), userId);
+      allow delete: if isOwner(userId) && isValidId(userId);
+
+      // AI Personal Plans subcollection
+      match /plans/{planId} {
+        allow get: if isOwner(userId) && isValidId(planId);
+        allow list: if isOwner(userId);
+        allow create: if isOwner(userId) && isValidId(planId) && isValidPersonalPlan(incoming(), userId);
+        allow update: if isOwner(userId) && isValidId(planId) && isValidPersonalPlan(incoming(), userId);
+        allow delete: if isOwner(userId) && isValidId(planId);
+      }
+
+      // Progress Tracking subcollection
+      match /progress/{progressId} {
+        allow get: if isOwner(userId) && isValidId(progressId);
+        allow list: if isOwner(userId);
+        allow create: if isOwner(userId) && isValidId(progressId) && isValidProgressLog(incoming(), userId);
+        allow update: if isOwner(userId) && isValidId(progressId) && isValidProgressLog(incoming(), userId);
+        allow delete: if isOwner(userId) && isValidId(progressId);
+      }
+    }
+  }
+}

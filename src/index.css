@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: #0A0D0E;
+    color: #F8FAFC;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-display {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+
+  .font-mono-numbers {
+    font-family: var(--font-display);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Glassmorphism Surface Tiers according to Bio-Luminescent Precision spec */
+.glass-panel {
+  background: rgba(17, 22, 24, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(16, 185, 129, 0.12);
+}
+
+.glass-panel-elevated {
+  background: rgba(24, 32, 34, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  box-shadow: inset 0 1px 0 rgba(163, 230, 53, 0.18), 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.telemetry-card {
+  background: rgba(17, 22, 24, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(16, 185, 129, 0.15);
+  position: relative;
+}
+
+.telemetry-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(163, 230, 53, 0.25), transparent);
+  pointer-events: none;
+}
+
+.ai-coach-card {
+  background: rgba(17, 22, 24, 0.85);
+  border: 1px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+}
+
+.ai-coach-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(163, 230, 53, 0.35), rgba(16, 185, 129, 0.2), rgba(24, 32, 34, 0.2));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Glow effects */
+.glow-lime {
+  box-shadow: 0 0 20px rgba(163, 230, 53, 0.3);
+}
+
+.glow-lime-sm {
+  box-shadow: 0 0 12px rgba(163, 230, 53, 0.22);
+}
+
+.glow-emerald {
+  box-shadow: 0 0 28px -6px rgba(16, 185, 129, 0.3);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0D0E;
+}
+::-webkit-scrollbar-thumb {
+  background: #182022;
+  border-radius: 9999px;
+  border: 1px solid rgba(16, 185, 129, 0.15);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #273647;
+}

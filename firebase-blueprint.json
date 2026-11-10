@@ -1,0 +1,91 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User profile with biometrics, location, and nutritional preferences.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "The unique user identifier matching Firebase Auth UID." },
+        "email": { "type": "string", "description": "User email address." },
+        "fullName": { "type": "string", "maxLength": 100, "description": "User full name." },
+        "age": { "type": "number", "description": "Age in years." },
+        "gender": { "type": "string", "description": "Gender identity." },
+        "country": { "type": "string", "maxLength": 80, "description": "Country of residence." },
+        "state": { "type": "string", "maxLength": 80, "description": "State/Province for regional nutrition mapping." },
+        "city": { "type": "string", "maxLength": 80, "description": "City for local market availability." },
+        "locality": { "type": "string", "maxLength": 120, "description": "Specific locality or market area." },
+        "currentWeightKg": { "type": "number", "description": "Current weight in kg." },
+        "targetWeightKg": { "type": "number", "description": "Target weight in kg." },
+        "currentHeightCm": { "type": "number", "description": "Current height in cm." },
+        "desiredHeightCm": { "type": "number", "description": "Desired height in cm." },
+        "weightUnit": { "type": "string", "enum": ["kg", "lbs"], "description": "Preferred weight unit." },
+        "heightUnit": { "type": "string", "enum": ["cm", "ft"], "description": "Preferred height unit." },
+        "primaryGoal": { "type": "string", "description": "Primary fitness objective." },
+        "experienceLevel": { "type": "string", "enum": ["Beginner", "Intermediate", "Advanced"], "description": "Workout experience level." },
+        "equipment": { "type": "string", "description": "Available workout equipment." },
+        "dietaryPreference": { "type": "string", "enum": ["Vegetarian", "Eggetarian", "Non-vegetarian", "Vegan"], "description": "Core diet preference." },
+        "allergies": { "type": "array", "description": "List of food allergies." },
+        "dislikedFoods": { "type": "array", "description": "Foods the user dislikes." },
+        "dailyBudget": { "type": "string", "description": "Selected daily food budget tier." },
+        "mealsPerDay": { "type": "number", "description": "Preferred meal frequency per day." },
+        "regularFoods": { "type": "array", "description": "Foods regularly consumed." },
+        "dailyCalorieTarget": { "type": "number", "description": "Calculated daily calorie target." },
+        "dailyProteinTargetG": { "type": "number", "description": "Daily protein goal in grams." },
+        "dailyCarbsTargetG": { "type": "number", "description": "Daily carbs goal in grams." },
+        "dailyFatTargetG": { "type": "number", "description": "Daily fat goal in grams." },
+        "dailyHydrationTargetMl": { "type": "number", "description": "Daily water target in ml." },
+        "dailyMovementTargetKcal": { "type": "number", "description": "Daily active movement burn target in kcal." },
+        "hasCompletedOnboarding": { "type": "boolean", "description": "Flag indicating assessment completed." },
+        "isTeenager": { "type": "boolean", "description": "Flag indicating user is under 20 for development guidance." },
+        "updatedAt": { "type": "string", "description": "ISO timestamp of last update." }
+      },
+      "required": ["id", "email", "fullName", "currentWeightKg", "targetWeightKg", "currentHeightCm", "primaryGoal", "dietaryPreference"]
+    },
+    "PersonalPlan": {
+      "title": "PersonalPlan",
+      "description": "AI-generated tailored diet and training plan powered by Google Gemini.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Plan document ID." },
+        "userId": { "type": "string", "description": "Owner user UID." },
+        "createdAt": { "type": "string", "description": "ISO timestamp of generation." },
+        "summary": { "type": "string", "description": "AI executive summary of the protocol." },
+        "heightGuidance": { "type": "string", "description": "Science-backed advice on growth plate genetics and adolescent development." },
+        "dietPlan": { "type": "object", "description": "Detailed meal plan with quantities, local alternatives, and cost estimates." },
+        "workoutPlan": { "type": "object", "description": "7-day structured training split with warm-ups, sets/reps, rest, and alternatives." }
+      },
+      "required": ["id", "userId", "dietPlan", "workoutPlan"]
+    },
+    "ProgressLog": {
+      "title": "ProgressLog",
+      "description": "Daily or periodic tracking entry for weight, workout completion, and nutrition.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Log entry identifier." },
+        "userId": { "type": "string", "description": "Owner user UID." },
+        "date": { "type": "string", "description": "Date of entry (YYYY-MM-DD)." },
+        "weightKg": { "type": "number", "description": "Recorded weight in kg." },
+        "workoutsCompleted": { "type": "number", "description": "Number of workout sessions completed today." },
+        "caloriesConsumed": { "type": "number", "description": "Total calories consumed." },
+        "proteinGConsumed": { "type": "number", "description": "Total protein consumed in grams." },
+        "waterMlConsumed": { "type": "number", "description": "Water consumed in ml." },
+        "notes": { "type": "string", "maxLength": 500, "description": "Athlete daily log notes." }
+      },
+      "required": ["id", "userId", "date", "weightKg"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/UserProfile" },
+      "description": "User profile records containing biometrics, localized geography, and nutritional constraints."
+    },
+    "/users/{userId}/plans/{planId}": {
+      "schema": { "$ref": "#/entities/PersonalPlan" },
+      "description": "AI personalized nutrition and training protocols synthesized by Gemini."
+    },
+    "/users/{userId}/progress/{progressId}": {
+      "schema": { "$ref": "#/entities/ProgressLog" },
+      "description": "Daily biometric, workout adherence, and nutrition progress tracking logs."
+    }
+  }
+}

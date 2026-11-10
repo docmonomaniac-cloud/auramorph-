@@ -1,0 +1,6 @@
+{
+  "summary":  "Comprehensive implementation plan to build the Calisthenics Academy section in AURAMORPH.\nFeatures:\n- Track selection (Fitness & Nutrition, Calisthenics, Both) on AuthView & Onboarding\n- Dedicated 'Calisthenics' navigation tab & glowing neon-purple theme\n- 3 skill tiers (Beginner, Intermediate, Advanced) covering all 23 requested skills\n- Real verified YouTube video tutorials in an expandable inline drawer per exercise\n- Step-by-step cues, safety guidelines, common mistakes, and progression trees\n- Skill mastery tracking and progression system saved in Firestore and local state\n- Strict preservation of all existing diet, workout, biometrics, and AI coach features",
+  "updatedAt":  "2026-11-08T03:20:24.319210258Z",
+  "requestFeedback":  true,
+  "userFacing":  true
+}

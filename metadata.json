@@ -1,0 +1,6 @@
+{
+  "name": "Kinetix Bio-Precision Fitness",
+  "description": "High-performance AI fitness transformation platform tailored for modern athletic training and Indian nutrition science with metabolic telemetry.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
